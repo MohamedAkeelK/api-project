@@ -1,12 +1,25 @@
 import mongoose from "mongoose";
+// import "mongoose-type-email";
+
 const Schema = mongoose.Schema;
 
 let User = new Schema({
+  order: Number,
   gender: String,
   name: {
     title: String,
-    first: String,
-    last: String,
+    first: {
+      type: String,
+      required: true,
+      minlength: 2,
+      maxlength: 40,
+    },
+    last: {
+      type: String,
+      required: true,
+      minlength: 2,
+      maxlength: 40,
+    },
   },
   location: {
     street: { number: Number, name: String },
@@ -20,7 +33,11 @@ let User = new Schema({
       description: String,
     },
   },
-  email: String,
+  email: {
+    type: String,
+    required: true,
+    unique: true,
+  },
   dob: { data: String, age: Number },
   phone: String,
   cell: String,

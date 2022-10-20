@@ -35,6 +35,31 @@ export const getUser = async (req, res) => {
   }
 };
 
+export const getUserByGender = async (req, res) => {
+  console.log("hit this route");
+  try {
+    const user = await User.find({ gender: req.params.id }, (err, result) => {
+      if (err) {
+        console.log(err);
+      } else {
+        console.log(result);
+      }
+    })
+      .clone()
+      .catch(function (err) {
+        console.log(err);
+      });
+
+    if (user) {
+      return res.json(user);
+    }
+    res.status(404).json({ message: "user not found!" });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: error.message });
+  }
+};
+
 export const createUser = async (req, res) => {
   try {
     const user = new User(req.body);
