@@ -120,9 +120,6 @@
 }
 ```
 
-6351ac71fb33ed5ee38c5682
-6351aeddfb33ed5ee38c5687
-
 - endpoint: PUT /users/:id
 - status: 201 created
 - description: updates a single User.
