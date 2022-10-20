@@ -153,7 +153,7 @@ https://documenter.getpostman.com/view/23919886/2s84DhX6oc
 }
 ```
 
-- endpoint: DELETE /users/:id
+- **endpoint: DELETE /users/:id**
 - status: 200 OK
 - description: updates a single User.
 - example response:
