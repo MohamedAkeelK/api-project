@@ -10,56 +10,54 @@ export const getUsers = async (req, res) => {
   }
 };
 
-// export const getCharacter = async (req, res) => {
-//   try {
-//     const { id } = req.params;
-//     const character = await Character.findById(id);
+export const getUser = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const user = await User.findById(id);
 
-//     if (character) {
-//       return res.json(character);
-//     }
+    if (user) {
+      return res.json(user);
+    }
+    res.status(404).json({ message: "user not found!" });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: error.message });
+  }
+};
 
-//     res.status(404).json({ message: "Character not found!" });
-//   } catch (error) {
-//     console.error(error);
-//     res.status(500).json({ error: error.message });
-//   }
-// };
+export const createUser = async (req, res) => {
+  try {
+    const user = new User(req.body);
+    await user.save();
+    res.status(201).json(user);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: error.message });
+  }
+};
 
-// export const createCharacter = async (req, res) => {
-//   try {
-//     const character = new Character(req.body);
-//     await character.save();
-//     res.status(201).json(character);
-//   } catch (error) {
-//     console.error(error);
-//     res.status(500).json({ error: error.message });
-//   }
-// };
+export const updateUser = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const user = await User.findByIdAndUpdate(id, req.body);
+    res.status(201).json(user);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: error.message });
+  }
+};
 
-// export const updateCharacter = async (req, res) => {
-//   try {
-//     const { id } = req.params;
-//     const character = await Character.findByIdAndUpdate(id, req.body);
-//     res.status(201).json(character);
-//   } catch (error) {
-//     console.error(error);
-//     res.status(500).json({ error: error.message });
-//   }
-// };
+export const deleteUser = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const deleted = await User.findByIdAndDelete(id);
 
-// export const deleteCharacter = async (req, res) => {
-//   try {
-//     const { id } = req.params;
-//     const deleted = await Character.findByIdAndDelete(id);
-
-//     if (deleted) {
-//       return res.status(200).send("Character deleted!");
-//     }
-
-//     throw new Error("Character not found");
-//   } catch (error) {
-//     console.error(error);
-//     res.status(500).json({ error: error.message });
-//   }
-// };
+    if (deleted) {
+      return res.status(200).send("User deleted!");
+    }
+    throw new Error("User not found");
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: error.message });
+  }
+};
