@@ -1,5 +1,5 @@
 import db from "./db/connection.js";
-import routes from "./routes/index.js"; // not created yet
+import routes from "./routes/index.js";
 import express from "express";
 import cors from "cors";
 import logger from "morgan";
