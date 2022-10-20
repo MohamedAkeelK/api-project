@@ -1,8 +1,14 @@
 # api-project
 
+This is a CRUD project that uses mongoose and express. This API gets random users along with other user properties.
+
 ## 3rd-party api used
 
 - https://randomuser.me/
+
+## API DOCUMENTATION IN POSTMAN
+
+https://documenter.getpostman.com/view/23919886/2s84DhX6oc
 
 ## API DOCUMENTATION
 
