@@ -1,24 +1,10 @@
 # api-project
 
-# 3rd-party api used
+## 3rd-party api used
 
 - https://randomuser.me/
 
-# Thing that i learned
-
-- file cant be empty when writing to it. add curly braces to fix.
-
-# Errors I got
-
-- error: "Query was already executed
-- was able to fix using
-
-```
-.clone().catch(function(err){ console.log(err)})
-});
-```
-
-# API DOCUMENTATION
+## API DOCUMENTATION
 
 - endpoint: GET /users
 - status code: 200 ok
@@ -311,4 +297,18 @@
         "__v": 0
     }
 ]
+```
+
+## Things that i learned
+
+- file cant be empty when writing to it. add curly braces to fix.
+
+## Errors I got
+
+- error: "Query was already executed
+- was able to fix using
+
+```
+.clone().catch(function(err){ console.log(err)})
+});
 ```
