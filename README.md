@@ -12,7 +12,7 @@ https://documenter.getpostman.com/view/23919886/2s84DhX6oc
 
 ## API DOCUMENTATION
 
-- endpoint: GET /users
+- **endpoint: GET /users**
 - status code: 200 ok
 - description: gets all users, 50 users in total.
 - example response:
@@ -63,7 +63,7 @@ https://documenter.getpostman.com/view/23919886/2s84DhX6oc
   ]
   ```
 
-- endpoint: POST /users
+- **endpoint: POST /users**
 - status: 201 created
 - description: creates a new User.
 - first, last, email are required and email should be unique
@@ -112,7 +112,7 @@ https://documenter.getpostman.com/view/23919886/2s84DhX6oc
 }
 ```
 
-- endpoint: PUT /users/:id
+- **endpoint: PUT /users/:id**
 - status: 201 created
 - description: updates a single User.
 - example body:
@@ -162,7 +162,7 @@ https://documenter.getpostman.com/view/23919886/2s84DhX6oc
   User deleted!
 ```
 
-- endpoint: GET /users/gender/:gender
+- **endpoint: GET /users/gender/:gender**
 - status: 200 OK
 - gender slug can either be male or female.
 - description: gets all Users by gender
@@ -214,7 +214,7 @@ https://documenter.getpostman.com/view/23919886/2s84DhX6oc
 ]
 ```
 
-- endpoint: GET /users/limit/:num
+- **endpoint: GET /users/limit/:num**
 - status: 200 OK
 - gender slug can either be male or female.
 - description: gets all Users by gender
