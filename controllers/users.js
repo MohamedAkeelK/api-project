@@ -10,6 +10,16 @@ export const getUsers = async (req, res) => {
   }
 };
 
+export const getUsersLimit = async (req, res) => {
+  try {
+    const users = await User.find().limit(req.params.id);
+    res.json(users);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: error.message });
+  }
+};
+
 export const getUser = async (req, res) => {
   try {
     const { id } = req.params;

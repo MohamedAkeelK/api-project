@@ -3,7 +3,7 @@ import * as controllers from "../controllers/users.js";
 const router = Router();
 
 router.get("/", controllers.getUsers);
-router.get("/", controllers.getUsers);
+router.get("/limit/:id", controllers.getUsersLimit);
 router.get("/:id", controllers.getUser);
 router.post("/", controllers.createUser);
 router.put("/:id", controllers.updateUser);

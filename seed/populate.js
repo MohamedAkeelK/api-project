@@ -1,15 +1,18 @@
 import axios from "axios";
 import fs from "fs";
 import User from "../models/User.js";
-import users from "./userData.json" assert { type: "json" };
 import db from "../db/connection.js";
 
+const USER_SEED_COUNT = 50;
 let count = 0;
 let allUsers = {};
+
 const getUsers = async () => {
   count++;
   if (count > 1) return;
-  let response = await axios("https://randomuser.me/api/?results=100");
+  let response = await axios(
+    `https://randomuser.me/api/?results=${USER_SEED_COUNT}`
+  );
   let usersData = response.data.results;
   let structuredUsers = usersData.map(
     ({ gender, name, location, email, dob, phone, cell, picture, nat }) => {
@@ -26,7 +29,6 @@ const getUsers = async () => {
       };
     }
   );
-  // console.log(structuredUsers);
   allUsers = structuredUsers;
   writeUserData();
 };
