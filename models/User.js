@@ -1,6 +1,4 @@
 import mongoose from "mongoose";
-// import "mongoose-type-email";
-
 const Schema = mongoose.Schema;
 
 let User = new Schema({
@@ -39,7 +37,9 @@ let User = new Schema({
     unique: true,
   },
   dob: { data: String, age: Number },
-  phone: String,
+  phone: {
+    type: String,
+  },
   cell: String,
   picture: {
     large: String,
