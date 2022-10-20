@@ -12,7 +12,7 @@ export const getUsers = async (req, res) => {
 
 export const getUsersLimit = async (req, res) => {
   try {
-    const users = await User.find().limit(req.params.id);
+    const users = await User.find().limit(req.params.num);
     res.json(users);
   } catch (error) {
     console.error(error);
@@ -38,13 +38,16 @@ export const getUser = async (req, res) => {
 export const getUserByGender = async (req, res) => {
   console.log("hit this route");
   try {
-    const user = await User.find({ gender: req.params.id }, (err, result) => {
-      if (err) {
-        console.log(err);
-      } else {
-        console.log(result);
+    const user = await User.find(
+      { gender: req.params.gender },
+      (err, result) => {
+        if (err) {
+          console.log(err);
+        } else {
+          console.log(result);
+        }
       }
-    })
+    )
       .clone()
       .catch(function (err) {
         console.log(err);
