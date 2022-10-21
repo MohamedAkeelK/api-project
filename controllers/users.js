@@ -36,7 +36,6 @@ export const getUser = async (req, res) => {
 };
 
 export const getUserByGender = async (req, res) => {
-  console.log("hit this route");
   try {
     const user = await User.find(
       { gender: req.params.gender },

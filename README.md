@@ -6,9 +6,11 @@ This project is a CRUD REST API that returns an array of boilerplate user data. 
 
 fork and clone this repository then in the terminal run ...
 
-1. npm install // install dependencies
-2. npm run db:seed // seed the database
-3. npm run dev // start development server
+```bash
+  npm install
+  npm run db:seed
+  npm run dev
+```
 
 ### Prerequisites
 
@@ -17,7 +19,7 @@ fork and clone this repository then in the terminal run ...
 
 ## Deployment
 
-Add additional notes about how to deploy this on a live system
+- netlify
 
 ## Built With
 
@@ -336,15 +338,15 @@ https://documenter.getpostman.com/view/23919886/2s84DhX6oc
 ]
 ```
 
-## Things that i learned
-
-- file cant be empty when writing to it. add curly braces to fix.
-
 ## Errors I got
 
-- error: "Query was already executed
+- error: "Query was already executed"
+- occured when trying to get users by gender,
 - was able to fix using
 
 ```js
 .clone().catch(function(err){ console.log(err)});
 ```
+
+- fs.writeFile() wouldnt allow me to write to an empty file.
+  - added an empty object to fix.
