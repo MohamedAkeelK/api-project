@@ -1,6 +1,37 @@
-# api-project
+# API-DUMMY-USERS
 
-This is a CRUD project that uses mongoose and express. This API gets random users along with other user properties.
+This project is a CRUD REST API that returns an array of boilerplate user data. Includes properties such as name, email, gender, email, etc.
+
+## Getting Started Locally
+
+fork and clone this repository then in the terminal run ...
+
+1. npm install // install dependencies
+2. npm run db:seed // seed the database
+3. npm run dev // start development server
+
+### Prerequisites
+
+- must have node installed
+- must have mongodb installed
+
+## Deployment
+
+Add additional notes about how to deploy this on a live system
+
+## Built With
+
+- nodejs
+- express
+- mongoose
+
+## Contributing
+
+fork, clone, create a new feature, and submit a pull request!
+
+## Authors
+
+- **Mohamed Akeel Khan**
 
 ## 3rd-party api used
 
