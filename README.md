@@ -19,7 +19,8 @@ fork and clone this repository then in the terminal run ...
 
 ## Deployment
 
-- netlify
+- Railway
+- link: https://api-project-production.up.railway.app/users
 
 ## Built With
 
